@@ -1,4 +1,3 @@
-//TODO 1.0   package naming convention, improve package declaration
 package com.organization.mvcproject.MGLTask1.controller;
 
 import java.util.List;
@@ -21,7 +20,6 @@ import com.organization.mvcproject.MGLTask1.service.GameService;
 @Controller
 public class MGLTask1Controller {
 
-	//TODO 1.0 variable naming convention, improve reference name
 	@Autowired
 	private GameService javaGameService;
 
@@ -32,12 +30,7 @@ public class MGLTask1Controller {
 	
 	@RequestMapping(value = "/review", method = RequestMethod.GET)
 	public ModelAndView review() {
-	/**
-	 * TODO 1.0 Rename the jsp view, to "reviewCreatePage" because it matches the URL triggering a circular view path error.
-	 * update games.jsp as well. 
-	 * SEE:  https://www.baeldung.com/spring-circular-view-path-error
-	 */
-		return new ModelAndView("review", "command", new Review());
+		return new ModelAndView("reviewCreatePage", "command", new Review());
 	}
 
 	@RequestMapping(value = "/addReview", method = RequestMethod.POST)
