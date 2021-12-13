@@ -20,9 +20,6 @@ import com.organization.mvcproject.MGLTask1.service.GameService;
 @Controller
 public class MGLTask1Controller {
 
-	@Autowired
-	private GameService javaGameService;
-
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 		return "index";
@@ -53,12 +50,12 @@ public class MGLTask1Controller {
 	
 	@RequestMapping(value = "/game/all", method = RequestMethod.GET)
 	public ResponseEntity<List<Game>> fetchAllGames() {
-		return new ResponseEntity<List<Game>>(javaGameService.retrieveAllGames(), HttpStatus.OK);
+		return new ResponseEntity<List<Game>>(gameService.retrieveAllGames(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> createGame(@RequestBody Game game) {
-		javaGameService.saveGame(game);
+		gameService.saveGame(game);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 }
