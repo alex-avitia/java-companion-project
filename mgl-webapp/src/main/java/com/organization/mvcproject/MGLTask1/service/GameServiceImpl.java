@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.organization.mvcproject.MGLTask1.model.Game;
 
-//TODO 1.0  follow java class naming, improve class name
 public class GameServiceImpl implements GameService {
 
 	/**
